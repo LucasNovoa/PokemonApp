@@ -7,28 +7,32 @@ const URL_API_POKEMON_TYPE = 'https://pokeapi.co/api/v2/type';
 
 const getApiPokemons = async () => {
     // Opción 1----->
-    const apiPokemons = [];
-    const pokemonRequest = await axios.get(URL_API_POKEMON);
-    const urlPokemonSubrequest = pokemonRequest.data.results.map((pokemon) =>pokemon.url);
-    //console.log(urlPokemonSubrequest);
-    await axios.all(urlPokemonSubrequest.map((urlPokemonSubrequest) => axios.get(urlPokemonSubrequest))).then(
-        (foundPokemons) => {
-            foundPokemons.map((foundPokemon) => apiPokemons.push({
-                id: foundPokemon.data.id,
-                name: foundPokemon.data.name,
-                img: foundPokemon.data.sprites.other['official-artwork'].front_default,
-                hp: foundPokemon.data.stats[0].base_stat,
-                attack: foundPokemon.data.stats[1].base_stat,
-                defense: foundPokemon.data.stats[2].base_stat,
-                speed: foundPokemon.data.stats[5].base_stat,
-                height: foundPokemon.data.height,
-                weight: foundPokemon.data.weight,
-                createdInDb: false,
-                types: foundPokemon.data.types.map((t) => t.type.name)
-            }))
-        }
-    );
-    return apiPokemons;
+    try {
+        const apiPokemons = [];
+        const pokemonRequest = await axios.get(URL_API_POKEMON);
+        const urlPokemonSubrequest = pokemonRequest.data.results.map((pokemon) =>pokemon.url);
+        //console.log(urlPokemonSubrequest);
+        await axios.all(urlPokemonSubrequest.map((urlPokemonSubrequest) => axios.get(urlPokemonSubrequest))).then(
+            (foundPokemons) => {
+                foundPokemons.map((foundPokemon) => apiPokemons.push({
+                    id: foundPokemon.data.id,
+                    name: foundPokemon.data.name,
+                    img: foundPokemon.data.sprites.other['official-artwork'].front_default,
+                    hp: foundPokemon.data.stats[0].base_stat,
+                    attack: foundPokemon.data.stats[1].base_stat,
+                    defense: foundPokemon.data.stats[2].base_stat,
+                    speed: foundPokemon.data.stats[5].base_stat,
+                    height: foundPokemon.data.height,
+                    weight: foundPokemon.data.weight,
+                    createdInDb: false,
+                    types: foundPokemon.data.types.map((t) => t.type.name)
+                }))
+            }
+        );
+        return apiPokemons;
+    } catch (error) {
+        console.log(error);
+    }
 
     // Opción 2----->
     // const apiPokemons = [];
@@ -72,9 +76,13 @@ const getDbPokemons = async () => {
 }
 
 const getAllPokemons = async () => {
-    const apiPokemons = await getApiPokemons();
-    const dbPokemons = await getDbPokemons();
-    return [...apiPokemons, ...dbPokemons];
+    try {
+        const apiPokemons = await getApiPokemons();
+        const dbPokemons = await getDbPokemons();
+        return [...apiPokemons, ...dbPokemons];
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const getPokemonByNameOrId = async (id, name) => {
