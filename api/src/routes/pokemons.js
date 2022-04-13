@@ -65,9 +65,9 @@ router.get('/:idPokemon', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const { name, hp, attack, defense, speed, height, weight, types } = req.body;
+    const { name, img, hp, attack, defense, speed, height, weight, types } = req.body;
 
-    const newPokemon = await Pokemon.create({ name, hp, attack, defense, speed, height, weight });
+    const newPokemon = await Pokemon.create({ name, img, hp, attack, defense, speed, height, weight });
     let typeDB = await Type.findAll({
         where: {name: types}
     })

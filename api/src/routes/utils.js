@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { Pokemon,Type } = require('../db');
 
-const URL_API_POKEMON = 'https://pokeapi.co/api/v2/pokemon?limit=40';
+const URL_API_POKEMON = 'https://pokeapi.co/api/v2/pokemon?limit=58';
 const URL_API_POKEMON_NAME_OR_ID = 'https://pokeapi.co/api/v2/pokemon/';
 const URL_API_POKEMON_TYPE = 'https://pokeapi.co/api/v2/type';
 
