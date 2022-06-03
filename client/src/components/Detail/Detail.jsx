@@ -33,7 +33,7 @@ export default function Details() {
     }
 
     return(
-        <div>
+        <div className={s.details}>
             <NavBar/>
             <div className={s.cardContainer}>
             {

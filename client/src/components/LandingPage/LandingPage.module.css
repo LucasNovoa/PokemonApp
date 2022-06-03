@@ -1,44 +1,80 @@
 .landingPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    background-image: url("../../img/poke1.jpg");
+	width: 100%;
+	background-image: url("../../img/landingPokemon.gif");
     background-size: cover;
-    opacity: 0.9;
+	background-position: center;
     
 }
 
 .loadingApp{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-size: 18px;
-    color: rgba(200, 240, 255, 0.9);
-    background-image: url("../../img/pokeBall.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-	background-position-y: 150px;
-	/* animation-name: flash;
-	animation-duration: 0.8s;
+    font-size: 1.6rem;
+    color: rgba(220, 246, 255, 0.9);
+	animation-name: flash;
+	animation-duration: 0.4s;
 	animation-fill-mode: both;
-	animation-iteration-count: infinite; */
+	animation-iteration-count: infinite;
 }
 
-.loadingAppText{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-size: 18px;
-    color: rgba(200, 240, 255, 0.9);
-    background-repeat: no-repeat;
-    background-position: center;
-	background-position-y: 150px;
+.landing{
 	animation-name: flash;
 	animation-duration: 0.5s;
 	animation-fill-mode: both;
-	animation-iteration-count: infinite;
+	animation-iteration-count: infinite;	
+}
+
+.landingBtn {
+    cursor: pointer;
+	text-decoration:none;
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 3px 2px;
+	background:rgba(255, 255, 255, 0.2);
+	text-indent:0px;
+	line-height:2rem;
+	border-radius:50%;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:3.6rem;
+	color:rgba(255, 255, 255, 0.5);
+	width:15rem;
+	height:15rem;
+	padding:1rem;
+	border-color:#5a5c5cb9;
+	border-width:0.12rem;
+	border-style:solid;
+	animation-name: bounceInDown;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	background-image: url("../../img/pikachuBtn.gif");
+    background-size: 11rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.landingBtn:active {
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
+	position:relative;
+	top:0.3rem;
+	background-image: url("../../img/pikachuBtn.gif");
+    background-size: 11rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.landingBtn:hover {
+	background:rgba(255, 255, 255, 0.8);
+	background-image: url("../../img/pikachuBtn.gif");
+    background-size: 11.8rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.9;
+	color:rgba(255, 255, 255, 0.7);
+	font-size:4.2rem;
 }
 
 @keyframes flash {
@@ -47,49 +83,8 @@
 	}
 	
 	25%, 75% {
-	opacity: 0;
+	opacity: 0.5;
 	}
-}
-
-.button {
-    margin-top: 320px;
-    opacity: 0.8;
-    cursor: pointer;
-	text-decoration:none;
-	font-family:Arial;
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 3px 2px;
-	background:#2ef1ff;
-	background:linear-gradient(#2ef1ff, #3b9ceb);
-	text-indent:0px;
-	line-height:30px;
-	border-radius:25px;
-	text-align:center;
-	vertical-align:middle;
-	display:inline-block;
-	font-size:20px;
-	color:#ffffff;
-	width:400px;
-	height:280px;
-	padding:13px;
-	text-shadow:#6daac2 2px 2px 0px;
-	border-color:#659dab;
-	border-width:2px;
-	border-style:solid;
-	animation-name: bounceInDown;
-	animation-duration: 1s;
-	animation-fill-mode: both;
-}
-
-.button:active {
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#d6d6d6 1px 0 2px;
-	position:relative;
-	top:3px
-}
-
-.button:hover {
-	background:#3b9ceb;
-	background:linear-gradient(#3b9ceb, #2ef1ff);
 }
 
 @keyframes bounceInDown {

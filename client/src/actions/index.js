@@ -30,6 +30,13 @@ export function postPokemon(payload){
     }
 }
 
+export function orderById(payload){
+    return{
+        type: 'ORDER_BY_ID',
+        payload
+    }
+}
+
 export function orderByName(payload){
     return{
         type: 'ORDER_BY_NAME',

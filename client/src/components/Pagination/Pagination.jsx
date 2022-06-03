@@ -28,7 +28,7 @@ export default function Pagination ({pokemonPage, Pokemons, pagination, page}){
                     pageNumbers.length === 1 ? null :
                     <div className={s.pages} key={pageNumber}>
                         <button className={s.pagesBtn} style={page === pageNumber ?
-                            {background:"#C1C3BC",color:"#dbe6c4"} : {}} onClick={()=>pagination(pageNumber)}>{pageNumber}</button>
+                            {background:"transparent",color:"#273314"} : {}} onClick={()=>pagination(pageNumber)}>{pageNumber}</button>
                     </div>
                 ))}
         </div>

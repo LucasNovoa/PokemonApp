@@ -42,9 +42,6 @@ export default function SearchBar(){
 
     return(
         <div className={s.searchBox}>
-            <div className={s.btnCreate}>
-                <NavLink to="/create" className={s.searchBarBtns}>Create Pokemon</NavLink>
-            </div>
             <div className={s.searchAdd}>
                 <form className={s.searchAddForm} onSubmit={(e) => handleSubmit(e)}>
                     <input
@@ -65,6 +62,9 @@ export default function SearchBar(){
                         Search & Add Card
                     </button>
                 </form>
+                <div className={s.btnCreaate}>
+                    <NavLink to="/create" className={s.btnCreate}>Create!</NavLink>
+                </div>
             </div>
         </div>
     )

@@ -1,31 +1,38 @@
+.home {
+  background-image: url("../../img/backgroundImage1.png");
+  height: 100vh;
+  /* box-sizing: border-box;
+  background-size: cover; */
+}
+
 .containerCards{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    align-content: flex-end;
+    margin: -1rem;
 }
 
 .homeFilters {
-	width: 180px;
-  margin-top: 1px;
+	width: 12rem;
+  height: 2rem;
+  margin-top: -4rem;
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
-	background-color:#dbe6c4;
+	background-color:#C1C3BC90; 
 	border-radius:6px;
 	border:1px solid #b2b8ad;
 	display:inline-block;
 	cursor:pointer;
-	color:#5b5f57;
+	color:#273314;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
+	padding:0 1rem;
 	text-shadow:0px 1px 0px #ced9bf;
 }
 .homeFilters:hover {
-	background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
-	background-color:#9ba892;
+	background:linear-gradient(to bottom, rgba(156, 169, 147, 0.2) 5%, rgba(219, 230, 196, 0.2) 100%);
+	background-color:rgba(155, 168, 146, 0.2);
 }
 .homeFilters:active {
 	position:relative;
@@ -35,18 +42,40 @@
 .filters{
   display: flex;
   justify-content: center;
-  padding: 10px;
+}
+
+select option {
+  background-color: rgba(79, 104, 53, 0.5);
+}
+
+.numberOfCards{
+  position: absolute;
+  margin-top: -8rem;
+  margin-left: -42rem;
+  width: 5rem;
+  height: 7rem;
+  padding: 0;
+  display:inline-block;
+  color: #d7dfd1;
+  background-color: rgba(91, 95, 87, 0.8);
+}
+
+.number {
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .filtered{
-  margin-top: 0;
+  position: absolute;
+  margin-top: -2rem;
+  width: 30rem;
   padding: 0;
   display:inline-block;
+  color: #dddddd;
 }
 
 .homeCards img {
-    width: 130px;
-    height: 130px;
+    height: 13rem;
     object-fit: scale-down;
     padding: 3px;
     animation-name: pulse;
@@ -64,7 +93,7 @@
     100% { transform: scale(1); } 
 } 
 
-.homeCards{
+/* .homeCards{
     width: 300px;
     height: 350px;
     margin: 15px;
@@ -76,7 +105,6 @@
                 -10px 10px 15px 7px #FF616B, 
                 -10px -7px 27px 1px #8E5CFF, 
                 5px 5px 15px 5px rgba(0,0,0,0);
-    text-decoration: none;
     background:
     radial-gradient(
       110.35% 80.79% at 6% 103.92%,
@@ -106,8 +134,8 @@
     background: #D0EDFF;
     background: radial-gradient(ellipse at center, #D0EDFF,  #fcf67c);
     /* background-image: url("../../img/universe.gif");
-    background-size: cover; */
-}
+    background-size: cover; 
+} */
 
 .homeCardsLink{
   text-decoration: none;
@@ -119,5 +147,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 77vh;
+  height: 100vh;
 }

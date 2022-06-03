@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getPokemons, getTypes } from '../../actions/index';
 import {Link} from "react-router-dom";
 import s from'./LandingPage.module.css';
+import pokeBall from '../../img/pokeBall.gif';
+import landingPokemon from '../../img/landingPokemon.gif';
 
 export default function LandingPage(){
 
@@ -20,14 +22,14 @@ export default function LandingPage(){
     return(
         <div className={s.landingPageContainer}>
             { allPokemons.length ?
-            <div>
+            <div className={s.landing}>
                 <Link to='/pokemon'>
-                    <button className={s.button}>Try PokemonApp...</button>
+                    <button className={s.landingBtn}>Go!</button>
                 </Link>
             </div>
             :
             <div className={s.loadingApp}>
-                <p className={s.loadingAppText}>Loading Pokemon App...</p>
+                <h4>Loading Pokemon App...</h4>
             </div>
             }
         </div>

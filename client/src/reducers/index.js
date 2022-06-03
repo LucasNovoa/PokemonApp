@@ -27,6 +27,26 @@ function rootReducer (state=initialState, action) {
             return {
                 ...state,
             }
+        case 'ORDER_BY_ID':
+            let sortedId = action.payload === 'asc' ?
+            state.allPokemons.sort(function (a,b){
+            if (a.id > b.id){
+                return 1;}
+            if (b.id > a.id){
+                return -1;}
+                return 0;
+            }) : 
+            state.allPokemons.sort(function (a,b){
+            if (a.id > b.id){
+                return -1;}
+            if (b.id > a.id){
+                return 1;}
+                return 0; 
+            })
+            return{
+                ...state, 
+                allPokemons: sortedId
+            }
         case 'ORDER_BY_NAME':
             let sortedNames = action.payload === 'asc' ?
             state.allPokemons.sort(function (a,b){
@@ -77,7 +97,7 @@ function rootReducer (state=initialState, action) {
             }
         case 'FILTER_BY_ORIGIN':
             const pokemonsByOrigin= state.filteredPokemons;
-            const filteredOrigin = action.payload === 'createdByUser' ?
+            const filteredOrigin = action.payload === 'created by User' ?
                 pokemonsByOrigin.filter((p)=>p.createdInDb) : pokemonsByOrigin.filter((p=>!p.createdInDb))
             return{
                 ...state,

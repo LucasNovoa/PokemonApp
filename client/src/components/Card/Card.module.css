@@ -1,10 +1,49 @@
-.homeCard{
-    text-decoration: none;
-    margin-top: -16px;
+.card{
+    width: 15rem;
+    height: 20rem;
+    margin: 1rem;
+    border: 0.05rem solid #b2b8ad;
+    border-radius: 4%;
+    background-color: rgba(194, 191, 147, 0.3);
+    backdrop-filter: blur(0.25rem) grayscale(75%);
+    box-shadow: 8px 8px 20px 0px rgba(66, 68, 90, 1);
 }
 
-.showedCard{
+.card:hover{
+    background-color: rgba(79, 104, 53, 0.5);
+}
+
+.cardId{
+ margin-top: 0.3rem;
+ margin-left: 10rem;
+ color: #d7dfd1;
+ font-size: 0.75rem;
+}
+
+.cardImg{
+    margin-top: -1.7rem;
+}
+
+.cardName{
+    margin-top: 0;
+    color:#273314;
+}
+
+.containerCardTypes{
+    margin-top: -1.25rem;
+    color: #d7dfd1;
+}
+
+.cardTypes{
     display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 1.2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0.3rem;
+    border-radius: 12%;
+    color: #d7dfd1;
+    background-color: rgba(109, 104, 28, 0.5);
+    width: 5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
 }

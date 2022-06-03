@@ -1,5 +1,9 @@
 .App {
-  /* display: flex; */
+  /* position: absolute; 
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;*/
   text-align: center;
   color: rgb(27, 50, 62);
   height: 100vh;
