@@ -3,6 +3,7 @@ import { Link, useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetails, removeCard } from '../../actions/index';
 import NavBar from "../NavBar/NavBar";
+import SearchBar from '../SearchBar/SearchBar';
 import s from './Detail.module.css';
 import loading from '../../img/loading.gif';
 // import Swal from "sweetalert2";
@@ -35,11 +36,12 @@ export default function Details() {
     return(
         <div className={s.details}>
             <NavBar/>
+            <SearchBar/>
             <div className={s.cardContainer}>
             {
                 myPokemon.length > 0 ?
                 <div className={s.detailCard}>
-                    <h4>{myPokemon[0].id}</h4>
+                    <h4># {myPokemon[0].id.length > 5 ? myPokemon[0].id.slice(0,-31):myPokemon[0].id}</h4>
                     <h1>{myPokemon[0].name.toUpperCase()}</h1>
                     <img src={myPokemon[0].img} alt='img not found'/>
                     <h3>Types: {myPokemon[0].types.map(type => `${type.toUpperCase()} `)}</h3>
@@ -51,9 +53,8 @@ export default function Details() {
                     <p>Height: {myPokemon[0].height}</p>
                     <p>Weight: {myPokemon[0].weight}</p>
                     </ul>
-                    <div>
-                        <button className={s.removeBtn} id={myPokemon[0].id} onClick={handleClick}>Remove this card</button>
-                    </div>
+                    <button className={s.removeBtn} id={myPokemon[0].id} onClick={handleClick}>Remove Card</button>
+                    <Link className={s.backBtn} to='/pokemon'>Back to Cards</Link>
                 </div>
                 :
                 <div className={s.loading}>
@@ -61,11 +62,6 @@ export default function Details() {
                     <h3>Loading...</h3>
                 </div>
             }
-            </div>
-            <div>
-                <Link  to='/pokemon'>
-                    <button className={s.backBtn}>Back to cards panel</button>
-                </Link>
             </div>
         </div>
     )

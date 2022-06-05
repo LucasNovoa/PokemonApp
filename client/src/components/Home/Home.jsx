@@ -12,7 +12,6 @@ import Pagination from "../Pagination/Pagination";
 export default function Home() {
     const dispatch = useDispatch();
     const allPokemons = useSelector((state)=>state.allPokemons);
-    const numberOfCards = useSelector((state)=>state.filteredPokemons);
     const types = useSelector((state)=>state.types);
 
     const [loadedPokemons /*, setLoadedPokemons*/] = useState(allPokemons.length ? true : false);
@@ -110,10 +109,6 @@ export default function Home() {
                 </select>
                 {order.length > 0 && (<span className={s.filtered}>{order}</span>)}
             </form>
-            <div className={s.numberOfCards}>
-                <h1 className={s.number}>{numberOfCards.length}</h1>
-                <span>Cards</span>
-            </div>
             <div className={s.containerCards}>
                 { currentPokemons.length ?
                 currentPokemons.map((pokemon)=>{

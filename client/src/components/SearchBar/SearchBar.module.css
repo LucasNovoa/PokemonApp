@@ -3,7 +3,7 @@
 	flex-direction: row; */
 	position: absolute;
 	right: 8rem;
-	top: 0.9rem;
+	top: 1.9rem;
     /* justify-content: center; */
 }
 
@@ -31,8 +31,9 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e3e3e3;    
     margin-left: 22rem;
-	width: 3rem;
-	height: 3rem;
+	margin-top: -1.3rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	background-color:#C1C3BC90;
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	border-radius: 50%;
@@ -40,7 +41,7 @@
 	cursor:pointer;
 	color:#273314;
 	font-family:Arial;
-	font-size:1.1rem;
+	font-size:1.2rem;
 	font-weight:bold;
 	padding: 1rem;
 }
@@ -55,7 +56,7 @@
 }
 
 .searchBarBtns {
-	width: 14rem;
+	width: 11.65rem;
 	height: 2rem;
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	background-color:#C1C3BC90;

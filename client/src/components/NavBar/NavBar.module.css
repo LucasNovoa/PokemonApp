@@ -35,3 +35,21 @@
 	top:1px;
 }
 
+.numberOfCards{
+	position: absolute;
+	margin-top: -1rem;
+	margin-left: 10rem;
+	width: 5rem;
+	height: 7rem;
+	padding: 0;
+	display:inline-block;
+	color: #d7dfd1;
+	background-color: rgba(91, 95, 87, 0.8);
+  }
+  
+  .number {
+	margin-top: 2rem;
+	margin-bottom: 0;
+  }
+  
+

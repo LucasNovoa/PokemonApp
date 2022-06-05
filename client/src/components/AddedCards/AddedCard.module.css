@@ -64,23 +64,6 @@
 	text-decoration:none;
 }
 
-
-.loading{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-	margin-top: 0px;
-}
-
-.loading img {
-	width: 700px;
-	height: 700px;
-	object-fit: cover;
-	padding: 3px;
-	opacity: 0.7;
-}
-
 .backBtn {
 	margin-top: 40px;
 	  width: 400px;
@@ -106,10 +89,6 @@
   .backBtn:active {
 	  position:relative;
 	  top:1px;
-  }
-
-  .loadingGif{
-	  width:500px;
   }
 
   .containerCards img {
