@@ -37,18 +37,19 @@
 
 .numberOfCards{
 	position: absolute;
-	margin-top: -1rem;
-	margin-left: 10rem;
-	width: 5rem;
-	height: 7rem;
+	margin-top: -2.5rem;
+	margin-left: 9rem;
+	width: 6rem;
+	height: 10rem;
+	font-size: 1.25rem;
 	padding: 0;
 	display:inline-block;
 	color: #d7dfd1;
-	background-color: rgba(91, 95, 87, 0.8);
+	background-color: rgba(91, 95, 87, 0.7);
   }
   
   .number {
-	margin-top: 2rem;
+	margin-top: 4rem;
 	margin-bottom: 0;
   }
   

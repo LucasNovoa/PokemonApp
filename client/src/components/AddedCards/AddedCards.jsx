@@ -49,18 +49,22 @@ export default function AddedCards() {
                 addedPokemons.map((pokemon)=>{
                     return(
                         <div className={sd.detailCard}>
+                            <div className={sd.idName}>
                             <h4># {pokemon.id.length > 5 ? pokemon.id.slice(0,-31):pokemon.id}</h4>
                             <h1>{pokemon.name.toUpperCase()}</h1>
+                            </div>
+                            <div className={sd.imgTypes}>
                             <img src={pokemon.img} alt='img not found'/>
-                            <h3>Types: {pokemon.types.map(type => `${type.toUpperCase()} `)}</h3>
-                            <ul>
-                            <p>Hit Points: {pokemon.hp}</p>
-                            <p>Attack: {pokemon.attack}</p>
-                            <p>Defense: {pokemon.defense}</p>
-                            <p>Speed: {pokemon.speed}</p>
-                            <p>Height: {pokemon.height}</p>
-                            <p>Weight: {pokemon.weight}</p>
-                            </ul>
+                            <h3>Types {pokemon.types.map(type => `${type.toUpperCase()} `)}</h3>
+                            </div>
+                            <div className={sd.dataPoke}>
+                            <span>Hit Points: {pokemon.hp}</span>
+                            <span>Attack: {pokemon.attack}</span>
+                            <span>Defense: {pokemon.defense}</span>
+                            <span>Speed: {pokemon.speed}</span>
+                            <span>Height: {pokemon.height}</span>
+                            <span>Weight: {pokemon.weight}</span>
+                            </div>
                             <button className={sd.removeBtn} id={pokemon.id} onClick={handleClick}>Remove Card</button>                    
                             <Link className={sd.backBtn} to='/pokemon'>Back to Cards</Link>
                         </div>)

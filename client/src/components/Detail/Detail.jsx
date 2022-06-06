@@ -41,18 +41,22 @@ export default function Details() {
             {
                 myPokemon.length > 0 ?
                 <div className={s.detailCard}>
+                    <div className={s.idName}>
                     <h4># {myPokemon[0].id.length > 5 ? myPokemon[0].id.slice(0,-31):myPokemon[0].id}</h4>
                     <h1>{myPokemon[0].name.toUpperCase()}</h1>
+                    </div>
+                    <div className={s.imgTypes}>
                     <img src={myPokemon[0].img} alt='img not found'/>
-                    <h3>Types: {myPokemon[0].types.map(type => `${type.toUpperCase()} `)}</h3>
-                    <ul>
-                    <p>Hit Points: {myPokemon[0].hp}</p>
-                    <p>Attack: {myPokemon[0].attack}</p>
-                    <p>Defense: {myPokemon[0].defense}</p>
-                    <p>Speed: {myPokemon[0].speed}</p>
-                    <p>Height: {myPokemon[0].height}</p>
-                    <p>Weight: {myPokemon[0].weight}</p>
-                    </ul>
+                    <h3>Types {myPokemon[0].types.map(type => `${type.toUpperCase()} `)}</h3>
+                    </div>
+                    <div className={s.dataPoke}>
+                    <span>Hit Points: {myPokemon[0].hp}</span>
+                    <span>Attack: {myPokemon[0].attack}</span>
+                    <span>Defense: {myPokemon[0].defense}</span>
+                    <span>Speed: {myPokemon[0].speed}</span>
+                    <span>Height: {myPokemon[0].height}</span>
+                    <span>Weight: {myPokemon[0].weight}</span>
+                    </div>
                     <button className={s.removeBtn} id={myPokemon[0].id} onClick={handleClick}>Remove Card</button>
                     <Link className={s.backBtn} to='/pokemon'>Back to Cards</Link>
                 </div>

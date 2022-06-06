@@ -5,7 +5,9 @@
   margin-left: 15%;
   margin-top: -2rem;
   padding: 1rem;
+  border-radius: 0.5rem;
   background-color: rgba(39, 51, 20, 0.4);
+  box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.7);
 }
 
 /* .detailCard{
@@ -67,6 +69,40 @@
   height: 100vh;
 }
 
+.idName {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: xx-large;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: -2rem;
+  justify-content: space-between;
+  align-items: baseline;
+  opacity: 0.9;
+}
+
+.imgTypes {
+  margin-top: -8rem;
+  font-size: 1.4rem;
+  opacity: 0.95;
+}
+
+.dataPoke {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  padding: 2rem;
+  width: 13rem;
+  margin-top: -32rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-left: 59rem;
+  margin-right: 6rem;
+  border-radius: 1rem;
+  opacity: 0.8;
+  backdrop-filter: blur(0.4rem) grayscale(35%);
+}
+
 .loading{
     display: flex;
     flex-direction: column;
@@ -88,7 +124,7 @@
 	justify-content:center;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e3e3e3;    
-  margin-left: 75%;
+  margin-left: 80%;
   margin-top: -9rem;
 	width: 8rem;
 	height:8rem;
@@ -119,8 +155,8 @@
 	justify-content:center;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e3e3e3;    
-  margin-left: 25%;
-  margin-top: -2rem;
+  margin-left: 8%;
+  margin-top: 6rem;
 	width: 9rem;
 	height: 9rem;
 	background-color:#C1C3BC90;
@@ -166,10 +202,9 @@
 } 
 
 .detailCard img {
-  width: 16rem;
-  height: 16rem;
-  object-fit: scale-down;
-  padding: 3px;
+  width: 40rem;
+  height: 40rem;
+  object-fit: cover;
   animation-name: pulse;
   animation-duration: 4s;
   animation-fill-mode: both;
