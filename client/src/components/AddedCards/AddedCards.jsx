@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCard, removeDetails, restore } from "../../actions/index";
 import { Link, useHistory } from "react-router-dom";
-import s from "./AddedCard.module.css";
 import sd from "../Detail/Detail.module.css";
-import pokeBall from '../../img/pokeBall.gif'
+import s from './AddedCard.module.css';
 import loading from '../../img/loading.gif';
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
-import Card from "../Card/Card";
 
 export default function AddedCards() {
     const dispatch = useDispatch();
@@ -48,7 +46,7 @@ export default function AddedCards() {
                 { addedPokemons.length ?
                 addedPokemons.map((pokemon)=>{
                     return(
-                        <div className={sd.detailCard}>
+                        <div className={sd.detailCard} key={pokemon.id}>
                             <div className={sd.idName}>
                             <h4># {pokemon.id.length > 5 ? pokemon.id.slice(0,-31):pokemon.id}</h4>
                             <h1>{pokemon.name.toUpperCase()}</h1>
@@ -69,9 +67,10 @@ export default function AddedCards() {
                             <Link className={sd.backBtn} to='/pokemon'>Back to Cards</Link>
                         </div>)
                 }) :
-                <div className={sd.loading}>
+                <div className={s.loading}>
                     <img src={loading} alt=''/>
-                    <h3>Try another Name or ID!</h3>
+                    <Link className={s.backBtnLoad} to='/pokemon'>Back to Cards</Link>
+                    {/* <h3>Try another Name or ID!</h3> */}
                 </div>
                 }
             </div>

@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import {getPokemonByName, getPokemonBySearchId, restore} from "../../actions/index";
 import { useHistory } from 'react-router-dom';
 import s from "./SearchBar.module.css";
+import Swal from "sweetalert2";
 
 export default function SearchBar(){
     const dispatch = useDispatch();
@@ -25,7 +26,15 @@ export default function SearchBar(){
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(restore())
+        dispatch(restore());
+        if(!name && !searchId){
+            Swal.fire({
+                title: 'Sorry',
+                text: 'You must add a name or ID to search',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            })
+        }
         if(name !== ''){
             dispatch(getPokemonByName(name));
             setName("");
@@ -34,7 +43,7 @@ export default function SearchBar(){
         }
         if(searchId !== ''){
             dispatch(getPokemonBySearchId(searchId));
-            setSearchId("");
+            // setSearchId("");
         } else {
             history.push('/pokemonaddedcards')
         }

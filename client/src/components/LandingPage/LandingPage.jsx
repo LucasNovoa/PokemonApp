@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import { getPokemons, getTypes } from '../../actions/index';
+import { getPokemons, getTypes, restore } from '../../actions/index';
 import {Link} from "react-router-dom";
 import s from'./LandingPage.module.css';
-import pokeBall from '../../img/pokeBall.gif';
-import landingPokemon from '../../img/landingPokemon.gif';
 
 export default function LandingPage(){
 
@@ -13,6 +11,7 @@ export default function LandingPage(){
     const [loadedPokemons /*, setLoadedPokemons*/] = useState(allPokemons.length ? true : false);
 
     useEffect(() =>{
+        dispatch(restore())
         if(!loadedPokemons){
             dispatch(getTypes());
             dispatch(getPokemons());

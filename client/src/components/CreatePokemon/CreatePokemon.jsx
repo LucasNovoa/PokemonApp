@@ -17,12 +17,12 @@ export default function CreatePokemon() {
     const [input, setInput] = useState({
         name: '',
         img: '',
-        hp: '50',
-        attack: '30',
-        defense: '30',
-        speed: '20',
-        height: '5',
-        weight: '30',
+        hp: '0',
+        attack: '0',
+        defense: '0',
+        speed: '0',
+        height: '0',
+        weight: '0',
         types: []
     });
 
@@ -98,81 +98,93 @@ export default function CreatePokemon() {
     return(
         <div className={s.createPokemon}>
             <NavBar/>
-            <h1>Create your Pokemon</h1>
-            <form onSubmit={(event)=>handleSubmit(event)}>
-                <div>
-                    <label>Name:</label>
+            <h1 className={s.title}>CREATE YOUR POKEMON</h1>
+            <form className={s.createForm} onSubmit={(event)=>handleSubmit(event)}>
+                <div className={s.createName}>
+                    <label>POKEMON NAME</label>
                     <input
                         type='text'
                         value={input.name}
                         name= 'name'
                         autoComplete='off'
                         spellCheck="false"
+                        className={s.inputName}
                         onChange={handleChange}/>
-                </div>
-                {errors.name && (<p>{errors.name}</p>)}
-
-                <div>
-                    <label>Hit Points (HP):</label>
+                    </div>
+                    {errors.name && (<p className={s.errors}>{errors.name}</p>)}
+                <div className={s.createStats}>
+                    <label>Hit Points (HP) </label>
                     <input
-                        type='number'
+                        type='range'
+                        min='1'
+                        max='120'
                         value={input.hp}
                         name= 'hp'
                         onChange={handleChange}/>
+                        <span className={s.inputStats}> {input.hp}</span>
+                {errors.hp && (<p className={s.errors}>{errors.hp}</p>)}
                 </div>
-                {errors.hp && (<p>{errors.hp}</p>)}
-
-                <div>
-                    <label>Attack:</label>
+                <div className={s.createStats}>
+                    <label>Attack </label>
                     <input
-                        type='number'
+                        type='range'
                         value={input.attack}
+                        min='1'
+                        max='150'
                         name= 'attack'
                         onChange={handleChange}/>
+                        <span className={s.inputStats}> {input.attack}</span>
+                {errors.attack && (<p className={s.errors}>{errors.attack}</p>)}
                 </div>
-                {errors.attack && (<p>{errors.attack}</p>)}
-
-                <div>
-                    <label>Defense:</label>
+                <div className={s.createStats}>
+                    <label>Defense </label>
                     <input
-                        type='number'
+                        type='range'
                         value={input.defense}
+                        min='1'
+                        max='150'
                         name= 'defense'
                         onChange={handleChange}/>
+                        <span className={s.inputStats}> {input.defense}</span>
+                {errors.defense && (<p className={s.errors}>{errors.defense}</p>)}
                 </div>
-                {errors.defense && (<p>{errors.defense}</p>)}
-
-                <div>
-                    <label>Speed:</label>
+                <div className={s.createStats}>
+                    <label>Speed </label>
                     <input
-                        type='number'
+                        type='range'
                         value={input.speed}
+                        min='1'
+                        max='100'
                         name= 'speed'
                         onChange={handleChange}/>
+                        <span className={s.inputStats}> {input.speed}</span>
+                {errors.speed && (<p className={s.errors}>{errors.speed}</p>)}
                 </div>
-                {errors.speed && (<p>{errors.speed}</p>)}
-
-                <div>
-                    <label>Height:</label>
+                <div className={s.createStats}>
+                    <label>Height </label>
                     <input
-                        type='number'
+                        type='range'
                         value={input.height}
+                        min='1'
+                        max='80'
                         name= 'height'
                         onChange={handleChange}/>
+                        <span className={s.inputStats}> {input.height}</span>
+                {errors.height && (<p className={s.errors}>{errors.height}</p>)}
                 </div>
-                {errors.height && (<p>{errors.height}</p>)}
-
-                <div>
-                    <label>Weight:</label>
+                <div className={s.createStats}>
+                    <label>Weight </label>
                     <input
-                        type='number'
+                        type='range'
                         value={input.weight}
+                        min='1'
+                        max='3000'
                         name= 'weight'
                         onChange={handleChange}/>
+                        <span className={s.inputStats}> {input.weight}</span>
+                {errors.weight && (<p className={s.errors}>{errors.weight}</p>)}
                 </div>
-                {errors.weight && (<p>{errors.weight}</p>)}
-
-                <div>
+                <div className={s.createImg}>
                     <label>URL Image (optional):</label>
                     <input
                         alt='image not found'
@@ -184,10 +196,9 @@ export default function CreatePokemon() {
                         autoComplete='off'
                         spellCheck="false"
                         onChange={handleChange}/>
+                {errors.img && (<p className={s.errors}>{errors.img}</p>)}
                 </div>
-                {errors.img && (<p>{errors.img}</p>)}
-
-                <div>
+                <div className={s.createTypes}>
                     <select onChange={(event)=>handleSelect(event)}>
                         <option value='default'>Select Types</option>
                         {
@@ -197,8 +208,7 @@ export default function CreatePokemon() {
                         }
                     </select>
                 </div>
-                <div>
-                    <div>
+                <div className={s.createTypesSel}>
                     {input.types.map((selected)=>(
                         <div key={selected}>
                             <p>{selected}</p>
@@ -206,10 +216,9 @@ export default function CreatePokemon() {
                         </div>
                         ))
                     }
-                    </div>
+                {errors.types && (<p className={s.errors}>{errors.types}</p>)}
                 </div>
-                {errors.types && (<p>{errors.types}</p>)}
-                <button type='submit' className={s.backBtn}>Create Pokemon</button>
+                <button type='submit' className={s.createBtn}>Create Pokemon</button>
             </form>
         </div>
     )

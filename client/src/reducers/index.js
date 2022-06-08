@@ -24,6 +24,8 @@ function rootReducer (state=initialState, action) {
                 types: action.payload,
             }
         case 'POST_POKEMON':
+            state.filteredPokemons.push(action.payload)
+            state.allPokemons.push(action.payload)
             return {
                 ...state,
             }

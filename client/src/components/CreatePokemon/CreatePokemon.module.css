@@ -1,32 +1,123 @@
 .createPokemon{
-    display: flex;
-	align-items: center;
-    flex-direction: column;
+	background-image: url("../../img/backgroundImage3.png");
+	height: 100vh;
+  }
+
+.title {
+	font-size: 3rem;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;	color: #dddddd;
+	margin-top: 1rem;
+	animation-name: flash;
+	animation-duration: 9s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
 }
 
-.backBtn {
-	margin-top: 40px;
-	  width: 400px;
-	  box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	  background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
-	  background-color:#dbe6c4;
-	  border-radius:6px;
-	  border:1px solid #b2b8ad;
-	  display:inline-block;
-	  cursor:pointer;
-	  color:#5b5f57;
-	  font-family:Arial;
-	  font-size:15px;
-	  font-weight:bold;
-	  padding:6px 24px;
-	  text-decoration:none;
-	  text-shadow:0px 1px 0px #ced9bf;
-  }
-  .backBtn:hover {
-	  background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
-	  background-color:#9ba892;
-  }
-  .backBtn:active {
-	  position:relative;
-	  top:1px;
-  }
+.createForm {
+	display: flex;
+	flex-direction: column;
+	color: #273314;
+	width: 80rem;
+	height: 52rem;
+	margin-left: 15%;
+	margin-top: -10rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background-color: rgba(39, 51, 20, 0.15);
+	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.2);
+}
+
+.createName {
+	display: flex;
+	justify-content: center;
+	margin-top: 12rem;
+	margin-bottom: 4.5rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.inputName {
+	margin-left: 1rem;
+	width: 25rem;
+	font-size: 1.5rem;
+	color: #273314;
+	background-color: transparent;
+}
+
+.createStats {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 50rem;
+	margin-top: 1.2rem;
+	font-size: 1.4rem;
+}
+
+.inputStats {
+	width: 3rem;
+	text-align: end;
+}
+
+.errors {
+	position: absolute;
+	margin-left: 27%;
+	margin-top: 15rem;
+	font-size: 1rem;
+	color: brown;
+	width: 30rem;
+}
+
+.createImg {
+	display: inline-block;
+	margin-top: -17.25rem;
+	margin-bottom: 5rem;
+	margin-right: 5rem;
+	text-align: right;
+	font-size: 1.4rem;
+}
+
+.createBtn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e3e3e3;    
+	margin-left: 85%;
+	margin-top: 15rem;
+	width: 8rem;
+	height:8rem;
+	background-color:#74705490;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	border-radius: 45%;
+	border:1px solid #b2b8ad;
+	cursor:pointer;
+	color:#273314;
+	font-family:Arial;
+	font-size: 1rem;
+	font-weight:bold;
+	padding: 0.5rem;
+}
+.createBtn:hover {
+	background:linear-gradient(to bottom, rgba(156, 169, 147, 0.2) 5%, rgba(219, 230, 196, 0.2) 100%);
+	background-color:rgba(155, 168, 146, 0.2);
+}
+
+.createBtn:active {
+	position:relative;
+	top:1px;
+}
+
+@keyframes flash {
+	0%, 50%, 100% {
+		opacity: 0.5;
+	}
+	
+	25%, 75% {
+	opacity: 0.1;
+	}
+}

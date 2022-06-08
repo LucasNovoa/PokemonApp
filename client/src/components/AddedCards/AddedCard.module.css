@@ -1,112 +1,55 @@
-/* .containerCardsPok{
-	display: flex;
-	flex-direction: column;
-} */
-
-.containerCards{
-	display:inline-block;
-	cursor:pointer;
-	text-decoration: none;
-    /* display: flex;
-	flex-direction: column;
-    flex-wrap: wrap;
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-	align-items: center; */
-	width: 300px;
-    height: 350px;
-    margin: 80px;
-    box-shadow: 5px 5px 15px 5px #FF8080, 
-                -9px 5px 15px 5px #FFE488, 
-                -7px -5px 15px 5px #8CFF85, 
-                12px -5px 15px 5px #80C7FF, 
-                12px 10px 15px 7px #E488FF, 
-                -10px 10px 15px 7px #FF616B, 
-                -10px -7px 27px 1px #8E5CFF, 
-                5px 5px 15px 5px rgba(0,0,0,0);
-    text-decoration: none;
-    background:
-    radial-gradient(
-      110.35% 80.79% at 6% 103.92%,
-      rgba(37, 169, 239, 1) 0%,
-      rgba(37, 169, 239, 0) 100%
-    ),
-    linear-gradient(
-      169.3deg,
-      rgba(205, 249, 232, 1) 15%,
-      rgba(205, 249, 232, 0) 46%
-    ),
-    radial-gradient(
-      123% 73% at 107% 96%,
-      rgba(255, 253, 177, 1) 20%,
-      rgba(254, 228, 191, 1) 60%,
-      rgba(240, 189, 208, 1) 75%,
-      rgba(255, 129, 38, 0) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(0, 204, 131, 1) 0%,
-      rgba(0, 204, 131, 1) 100%
-    );
+    margin-top: -10rem;
+    height: 100vh;
+    color: #dddddd;
 }
 
-.containerCards:hover{
-    background: #D0EDFF;
-    background: radial-gradient(ellipse at center, #D0EDFF,  #fcf67c);
-    /* background-image: url("../../img/universe.gif");
-    background-size: cover; */
-}
-
-.addPokemonLink {
-	width: 190px;
-	display:inline-block;
-	cursor:pointer;
-	color: rgb(27, 50, 62);
-	text-decoration:none;
-}
-
-.backBtn {
-	margin-top: 40px;
-	  width: 400px;
-	  box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	  background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
-	  background-color:#dbe6c4;
-	  border-radius:6px;
-	  border:1px solid #b2b8ad;
-	  display:inline-block;
-	  cursor:pointer;
-	  color:#5b5f57;
-	  font-family:Arial;
-	  font-size:15px;
-	  font-weight:bold;
-	  padding:6px 24px;
-	  text-decoration:none;
-	  text-shadow:0px 1px 0px #ced9bf;
-  }
-  .backBtn:hover {
-	  background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
-	  background-color:#9ba892;
-  }
-  .backBtn:active {
-	  position:relative;
-	  top:1px;
-  }
-
-  .containerCards img {
-    width: 130px;
-    height: 130px;
-    object-fit: scale-down;
-    padding: 3px;
-    animation-name: pulse;
+.backBtnLoad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e3e3e3;    
+    margin-top: -7.5rem;
+    width: 8rem;
+    height:8rem;
+    background-color:#74705490;
+    box-shadow:inset 0px 0px 14px -3px #f2fadc;
+    border-radius: 45%;
+    border:1px solid #b2b8ad;
+    cursor:pointer;
+    color:#273314;
+    font-family:Arial;
+    font-size: 1rem;
+    font-weight:bold;
+    padding: 0.5rem;
+    animation-name: translate;
     animation-duration: 4s;
     animation-fill-mode: both;
-    animation-timing-function: ease-in;
-    animation-iteration-count:infinite;
 }
 
-@keyframes pulse { 
-    0% { transform: scale(1); } 
-    25% { transform: scale(1.05); } 
-    50% { transform: scale(1.03); }
-    60% { transform: scale(1.07); }
-    100% { transform: scale(1); } 
+.backBtnLoad:hover {
+    background:linear-gradient(to bottom, rgba(156, 169, 147, 0.2) 5%, rgba(219, 230, 196, 0.2) 100%);
+    background-color:rgba(155, 168, 146, 0.2);
+}
+
+.backBtnLoad:active {
+    position:relative;
+    top:1px;
+}
+
+@keyframes translate {
+0% {
+    opacity: 0;
+    transform: translate3d(0, 50rem, 0);
+}
+100% {
+    opacity: 1;
+    transform: none;
+}
 } 
