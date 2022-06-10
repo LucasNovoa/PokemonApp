@@ -45,7 +45,7 @@
   justify-content: center;
 }
 
-select option {
+.homeFilters option {
   background-color: rgba(79, 104, 53, 0.5);
 }
 

@@ -70,7 +70,7 @@ export default function CreatePokemon() {
 
     function handleSubmit(event){
         event.preventDefault();
-        console.log('soy Create Pokemon. Este es el input--->', input)
+        setInput({...input.name=input.name.toLowerCase()});
         !input.img ? setInput({...input.img='https://images.wikidexcdn.net/mwuploads/wikidex/0/02/latest/20090125150654/Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png'}) : setInput(input);
         if(Object.keys(errors).length === 0 && input.name.length && input.types.length > 0) {
             dispatch(postPokemon(input));
@@ -104,7 +104,7 @@ export default function CreatePokemon() {
                     <label>POKEMON NAME</label>
                     <input
                         type='text'
-                        value={input.name}
+                        value={input.name.toUpperCase()}
                         name= 'name'
                         autoComplete='off'
                         spellCheck="false"
@@ -186,18 +186,18 @@ export default function CreatePokemon() {
                 </div>
                 <div className={s.createTypes}>
                     <select className={s.selectValues} onChange={(event)=>handleSelect(event)}>
-                        <option value='default'>Select up to two Types</option>
+                        <option selected disabled value='default'>Select up to two Types</option>
                         {
                             input.types.length < 2 ?
-                            types.map((type)=>(<option value ={type.name} key={type.name}>{type.name}</option>)) :
-                            types.map((type)=>(<option value ={type.name} key={type.name} disabled>{type.name}</option>))
+                            types.map((type)=>(<option className={s.optionType} value ={type.name} key={type.name}>{type.name.charAt(0).toUpperCase()+type.name.slice(1)}</option>)) :
+                            <option value ='full' disabled>{`There are two chosen`}</option>
                         }
                     </select>
                 </div>
                 <div className={s.createTypesSel}>
                     {input.types.map((selected)=>(
                         <div className={s.selectedType} key={selected}>
-                            <p>{selected.toUpperCase()}</p>
+                            <p>{selected.charAt(0).toUpperCase()+selected.slice(1)}</p>
                             <button  className={s.deleteType} id={selected} onClick={handleClick}>x</button>
                         </div>
                         ))

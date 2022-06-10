@@ -80,29 +80,29 @@ export default function Home() {
             <SearchBar/>
             <form className={s.filters}>
                 <select className={s.homeFilters} onChange={e => handleIdSort(e)}>
-                    <option value = "default">order by ID...</option>
-                    <option value = "asc">asc order</option>
-                    <option value = "desc">desc order</option>
+                    <option selected disabled value = "default">order by ID...</option>
+                    <option value = "asc">Asc. order</option>
+                    <option value = "desc">Desc. order</option>
                 </select>
                 <select className={s.homeFilters} onChange={e => handleSort(e)}>
-                    <option value = "default">order by Name...</option>
+                    <option selected disabled value = "default">order by Name...</option>
                     <option value = "asc">A - Z</option>
                     <option value = "desc">Z - A</option>
                 </select>
                 <select className={s.homeFilters} onChange={e => handleSortAttack(e)}>
-                    <option value = "default">order by Strength...</option>
+                    <option selected disabled value = "default">order by Strength...</option>
                     <option value = "strongest">Strongest attack</option>
                     <option value = "weakest">Weakest attack</option>
                 </select>
                 <select className={s.homeFilters} onChange={e => handleFilterType(e)}>
-                    <option value = "default">filter by Type...</option>
-                    <option value = 'all'>all</option>
+                    <option selected disabled value = "default">filter by Type...</option>
+                    <option value = 'all'>All</option>
                     {types?.map((type) => (
-                    <option value = {type.name} key={type.name}>{type.name}</option>
+                    <option value = {type.name} key={type.name}>{type.name.charAt(0).toUpperCase()+type.name.slice(1)}</option>
                     ))}
                 </select>
                 <select className={s.homeFilters} onChange={e => handleFilterByOrigin(e)}>
-                    <option value = "default">filter by Origin...</option>
+                    <option selected disabled value = "default">filter by Origin...</option>
                     <option value = "all">Show all...</option>
                     <option value = "originals">Originals...</option>
                     <option value = "created by User">Created By User...</option>
@@ -130,7 +130,7 @@ export default function Home() {
                 :
                 <div className={s.reloadingApp}>
                     <img src={loading} alt=''/>
-                    <h3>There is no Pokemons...</h3>
+                    <h3>There are no Pokemon...</h3>
                 </div>
                 }
             </div>

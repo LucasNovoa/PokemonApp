@@ -34,7 +34,8 @@
 .createName {
 	display: flex;
 	justify-content: center;
-	margin-top: 12rem;
+	align-items: center;
+	margin-top: 11rem;
 	margin-bottom: 4.5rem;
 	font-size: 1.5rem;
 	font-weight: 600;
@@ -42,10 +43,18 @@
 
 .inputName {
 	margin-left: 1rem;
-	width: 25rem;
-	font-size: 1.5rem;
-	color: #273314;
-	background-color: transparent;
+	width: 19rem;
+	font-size: 1.8rem;
+	font-weight: 600;
+	padding: 0.8rem;
+	color: #dddddd;
+	background-color: rgba(39, 51, 20, 0.3);
+	border: none;
+	border-radius: 0.5rem;
+}
+
+.inputName:focus {
+	outline: none;
 }
 
 .createStats {
@@ -65,11 +74,12 @@
 .errorName {
 	position: absolute;
 	margin-left: 27%;
-	margin-top: 15rem;
+	margin-top: 16rem;
 	font-size: 1rem;
 	color: brown;
 	width: 30rem;
 	backdrop-filter: blur(0.5rem);
+	border-radius: 0.5rem;
 }
 
 .errors {
@@ -78,9 +88,8 @@
 	margin-top: 39rem;
 	padding: 0.3rem;
 	font-size: 1.4rem;
-	font-weight: 500;
 	text-align: center;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	color: brown;
 	width: 15rem;
 	backdrop-filter: blur(0.5rem);
@@ -88,21 +97,32 @@
 
 .createImg {
 	display: flex;
-	justify-content: flex-end;
-	width: 46rem;
-	margin-top: 24rem;
-	margin-left: 12rem;
+	justify-content: center;
+	padding: 0.5rem;
+	width: 55rem;
+	margin-top: 22rem;
+	margin-left: 11rem;
 	text-align: right;
 	font-size: 1.3rem;
+	backdrop-filter: blur(0.25rem);
 }
 
 .createTypes {
 	display: flex;
 	justify-content: flex-end;
+	position: relative;
 	width: 10rem;
 	margin-top: -16.5rem;
 	margin-left: 65rem;
 }
+
+/* .optionType {
+	background-color: #af000046;
+}
+
+.optionType:hover {
+	background-color: #06af0046;
+} */
 
 .selectValues {
 	width: 22rem;
@@ -111,7 +131,7 @@
 	margin-top: -1rem;
 	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.4);
 	background-color: transparent; 
-	border-radius:6px;
+	border-radius:0.5rem;
 	border:none;
 	display:inline-block;
 	cursor:pointer;
@@ -128,6 +148,21 @@
 .selectValues:active {
 	position:relative;
 	top:1px;
+}
+
+::selection {
+	color:red;
+	background-color: rgba(39, 51, 20, 0.2);
+}
+
+.selectValues option {
+	background-color: rgba(37, 104, 150, 0.5);
+	color: #3a3a3a;
+	font-size: 0.85rem;
+}
+
+.selectValues:focus {
+	outline: none;
 }
 
 .createTypesSel {
@@ -154,11 +189,6 @@
 	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.4);
 }
 
-select option {
-	background-color: rgba(53, 84, 104, 0.5);
-	color: #3a3a3a;
-  }
-
 .deleteType {
 	position: relative;
 	left: 6.2rem;
@@ -177,12 +207,22 @@ select option {
 
 .inputImg {
 	margin-left: 1rem;
-	width: 29rem;
+	width: 40rem;
 	height: 2rem;
+	padding-left: 0.5rem;
 	font-size: 0.9rem;
-	color: #273314;
+	color: #dddddd;
 	border: none;
-	background-color: #dddddd85;
+	background-color: rgba(39, 51, 20, 0.3);
+	border-radius: 0.5rem;
+}
+
+.inputImg::placeholder {
+	color: #acacac;
+}
+
+.inputImg:focus {
+	outline: none;
 }
 
 .imgContainer {
@@ -212,10 +252,10 @@ select option {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e3e3e3;    
 	margin-left: 85%;
-	margin-top: -6.5rem;
+	margin-top: -5.7rem;
 	width: 8rem;
 	height:8rem;
-	background-color:#74705490;
+	background-color:rgba(187, 182, 149, 0.8);
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	border-radius: 45%;
 	border:1px solid #b2b8ad;
@@ -238,10 +278,10 @@ select option {
 
 @keyframes flash {
 	0%, 50%, 100% {
-		opacity: 0.7;
+		opacity: 1;
 	}
 	
 	25%, 75% {
-	opacity: 0.6;
+	opacity: 0.75;
 	}
 }

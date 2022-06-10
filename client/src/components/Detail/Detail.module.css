@@ -155,7 +155,7 @@
 .detailCard img {
   width: 38rem;
   height: 38rem;
-  object-fit: cover;
+  object-fit: contain;
   animation-name: pulse;
   animation-duration: 4s;
   animation-fill-mode: both;
