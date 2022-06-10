@@ -17,12 +17,12 @@ export default function CreatePokemon() {
     const [input, setInput] = useState({
         name: '',
         img: '',
-        hp: '0',
-        attack: '0',
-        defense: '0',
-        speed: '0',
-        height: '0',
-        weight: '0',
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        speed: 0,
+        height: 0,
+        weight: 0,
         types: []
     });
 
@@ -111,7 +111,7 @@ export default function CreatePokemon() {
                         className={s.inputName}
                         onChange={handleChange}/>
                     </div>
-                    {errors.name && (<p className={s.errors}>{errors.name}</p>)}
+                    {errors.name && (<p className={s.errorName}>{errors.name}</p>)}
                 <div className={s.createStats}>
                     <label>Hit Points (HP) </label>
                     <input
@@ -184,23 +184,9 @@ export default function CreatePokemon() {
                         <span className={s.inputStats}> {input.weight}</span>
                 {errors.weight && (<p className={s.errors}>{errors.weight}</p>)}
                 </div>
-                <div className={s.createImg}>
-                    <label>URL Image (optional):</label>
-                    <input
-                        alt='image not found'
-                        value={input.img}
-                        name= 'img'
-                        pattern="https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$"
-                        title="FORMATO URL"
-                        placeholder='paste url image'
-                        autoComplete='off'
-                        spellCheck="false"
-                        onChange={handleChange}/>
-                {errors.img && (<p className={s.errors}>{errors.img}</p>)}
-                </div>
                 <div className={s.createTypes}>
-                    <select onChange={(event)=>handleSelect(event)}>
-                        <option value='default'>Select Types</option>
+                    <select className={s.selectValues} onChange={(event)=>handleSelect(event)}>
+                        <option value='default'>Select up to two Types</option>
                         {
                             input.types.length < 2 ?
                             types.map((type)=>(<option value ={type.name} key={type.name}>{type.name}</option>)) :
@@ -210,13 +196,28 @@ export default function CreatePokemon() {
                 </div>
                 <div className={s.createTypesSel}>
                     {input.types.map((selected)=>(
-                        <div key={selected}>
-                            <p>{selected}</p>
-                            <button id={selected} onClick={handleClick}>x</button>
+                        <div className={s.selectedType} key={selected}>
+                            <p>{selected.toUpperCase()}</p>
+                            <button  className={s.deleteType} id={selected} onClick={handleClick}>x</button>
                         </div>
                         ))
                     }
                 {errors.types && (<p className={s.errors}>{errors.types}</p>)}
+                </div>
+                {input.img && (<div className={s.imgContainer}><img className={s.urlImg} src={input.img} alt='img not found'/></div>)}
+                <div className={s.createImg}>
+                    <label>URL Image (optional):</label>
+                    <input
+                        alt='image not found'
+                        value={input.img}
+                        name= 'img'
+                        pattern="https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$"
+                        title="image URL"
+                        placeholder=' paste url image...'
+                        autoComplete='off'
+                        spellCheck="false"
+                        className={s.inputImg}
+                        onChange={handleChange}/>
                 </div>
                 <button type='submit' className={s.createBtn}>Create Pokemon</button>
             </form>

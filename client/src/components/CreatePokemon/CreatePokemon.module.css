@@ -20,15 +20,15 @@
 .createForm {
 	display: flex;
 	flex-direction: column;
-	color: #273314;
+	color: #dddddd;
 	width: 80rem;
 	height: 52rem;
 	margin-left: 15%;
 	margin-top: -10rem;
 	padding: 1rem;
 	border-radius: 0.5rem;
-	background-color: rgba(39, 51, 20, 0.15);
-	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.2);
+	background-color: rgba(39, 51, 20, 0.3);
+	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.4);
 }
 
 .createName {
@@ -52,7 +52,7 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	margin-right: 50rem;
+	margin-right: 54rem;
 	margin-top: 1.2rem;
 	font-size: 1.4rem;
 }
@@ -62,22 +62,146 @@
 	text-align: end;
 }
 
-.errors {
+.errorName {
 	position: absolute;
 	margin-left: 27%;
 	margin-top: 15rem;
 	font-size: 1rem;
 	color: brown;
 	width: 30rem;
+	backdrop-filter: blur(0.5rem);
+}
+
+.errors {
+	position: absolute;
+	margin-left: 27%;
+	margin-top: 39rem;
+	padding: 0.3rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	text-align: center;
+	border-radius: 1rem;
+	color: brown;
+	width: 15rem;
+	backdrop-filter: blur(0.5rem);
 }
 
 .createImg {
-	display: inline-block;
-	margin-top: -17.25rem;
-	margin-bottom: 5rem;
-	margin-right: 5rem;
+	display: flex;
+	justify-content: flex-end;
+	width: 46rem;
+	margin-top: 24rem;
+	margin-left: 12rem;
 	text-align: right;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
+}
+
+.createTypes {
+	display: flex;
+	justify-content: flex-end;
+	width: 10rem;
+	margin-top: -16.5rem;
+	margin-left: 65rem;
+}
+
+.selectValues {
+	width: 22rem;
+	height: 3rem;
+	margin: 0.1rem;
+	margin-top: -1rem;
+	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.4);
+	background-color: transparent; 
+	border-radius:6px;
+	border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#dddddd;
+	font-size:1.2rem;
+	padding:0 1rem;
+	text-shadow:0px 1px 0px #595e52;  
+}
+
+.selectValues:hover {
+	background:linear-gradient(to bottom, rgba(156, 169, 147, 0.2) 5%, rgba(219, 230, 196, 0.2) 100%);
+	background-color:rgba(155, 168, 146, 0.2);
+}
+.selectValues:active {
+	position:relative;
+	top:1px;
+}
+
+.createTypesSel {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	text-align: start;
+	margin-top: 25rem;
+	justify-content: flex-start;
+	margin-left: 62rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.selectedType {
+	position: relative;
+	margin: 0.3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 8rem;
+	height: 3.75rem;
+	border-radius: 0.5rem;
+	background-color: rgba(39, 51, 20, 0.1);
+	box-shadow: inset 8px 8px 24px 0px rgba(39, 51, 20, 0.4);
+}
+
+select option {
+	background-color: rgba(53, 84, 104, 0.5);
+	color: #3a3a3a;
+  }
+
+.deleteType {
+	position: relative;
+	left: 6.2rem;
+	top: -2.7rem;
+	height: 2rem;
+	width: 2rem;
+	color: #af0000;
+	background-color: rgba(90, 82, 82, 0.4);
+	border: none;
+}
+
+.deleteType:hover {
+	color: #dddddd;
+	background-color: #af0000;
+}
+
+.inputImg {
+	margin-left: 1rem;
+	width: 29rem;
+	height: 2rem;
+	font-size: 0.9rem;
+	color: #273314;
+	border: none;
+	background-color: #dddddd85;
+}
+
+.imgContainer {
+	position: absolute;
+	/* margin-left: -29rem; */
+	margin-left: 30rem;
+	margin-top: 20rem;
+	height: 20rem;
+	width: 20rem;
+	padding: 1rem;
+	font-size: 0.8rem;
+	color: #273314;
+	/* background-color: rgba(39, 51, 20, 0.5); */
+}
+
+.urlImg {
+	height: 18rem;
+	width: 18rem;
+	object-fit: scale-down;
 }
 
 .createBtn {
@@ -88,7 +212,7 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e3e3e3;    
 	margin-left: 85%;
-	margin-top: 15rem;
+	margin-top: -6.5rem;
 	width: 8rem;
 	height:8rem;
 	background-color:#74705490;
@@ -114,10 +238,10 @@
 
 @keyframes flash {
 	0%, 50%, 100% {
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 	
 	25%, 75% {
-	opacity: 0.1;
+	opacity: 0.6;
 	}
 }

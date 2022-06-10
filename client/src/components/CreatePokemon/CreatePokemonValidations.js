@@ -12,40 +12,8 @@ export default function validations(input, pokemonNames) {
         errors.name = 'Special characters and numbers are not allowed'
     }
 
-    if(!input.hp) {
-        errors.hp = 'required value'
-    } else if(input.hp > 500){
-        errors.hp = 'max Hit Points value is 500'
-    }
-
-    if(!input.attack) {
-        errors.attack = 'required value'
-    } else if(input.attack > 300){
-        errors.attack = 'this Pokemos is to strong (max value is 300)'
-    }
-
-    if(!input.defense) {
-        errors.defense = 'required value'
-    } else if(input.defense > 300){
-        errors.defense = 'max value is 300'
-    }
-
-    if(!input.speed) {
-        errors.speed = 'required value'
-    } else if(input.speed > 200){
-        errors.speed = 'oh..! so fast, max value is 200'
-    }
-
-    if(!input.height) {
-        errors.height = 'required value'
-    } else if(input.height > 200){
-        errors.height = 'oh..! to tall, max value is 200'
-    }
-
-    if(!input.weight) {
-        errors.weight = 'required value'
-    } else if(input.weight > 5000){
-        errors.weight = 'oh..! to heavy, max value is 5000'
+    if(input.hp === 0 || input.attack === 0 || input.defense === 0 || input.speed === 0 || input.height === 0 || input.weight === 0) {
+        errors.hp = 'Complete all stats!'
     }
 
     return errors
