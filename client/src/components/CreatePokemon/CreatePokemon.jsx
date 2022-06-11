@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
-import { postPokemon, getTypes } from "../../actions";
+import { postPokemon, getTypes, getPokemonByName } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./CreatePokemon.module.css";
 import NavBar from "../NavBar/NavBar";
@@ -74,7 +74,8 @@ export default function CreatePokemon() {
         !input.img ? setInput({...input.img='https://images.wikidexcdn.net/mwuploads/wikidex/0/02/latest/20090125150654/Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png'}) : setInput(input);
         if(Object.keys(errors).length === 0 && input.name.length && input.types.length > 0) {
             dispatch(postPokemon(input));
-            // dispatch(getPokemons());
+            dispatch(getPokemonByName(input.name));
+            history.push("/pokemonaddedcards")
             Swal.fire({
                 title: 'Congrats!',
                 text: 'Your Pokemon has been created',
@@ -82,7 +83,6 @@ export default function CreatePokemon() {
                 confirmButtonText: 'Cool!'
             })
             // alert('Your Pokemon has been created')
-            history.push("/pokemon")
         } else {
             Swal.fire({
                 title: 'Sorry',

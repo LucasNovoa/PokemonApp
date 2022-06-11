@@ -25,7 +25,7 @@ function rootReducer (state=initialState, action) {
             }
         case 'POST_POKEMON':
             let pokemonSession = state.filteredPokemons;
-            pokemonSession.push(action.payload);
+            // pokemonSession.push(action.payload);
             return {
                 ...state,
                 allPokemons: pokemonSession,
