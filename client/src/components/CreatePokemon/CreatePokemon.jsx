@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
-import { postPokemon, getPokemons, getTypes } from "../../actions";
+import { postPokemon, getTypes } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./CreatePokemon.module.css";
 import NavBar from "../NavBar/NavBar";
@@ -74,7 +74,7 @@ export default function CreatePokemon() {
         !input.img ? setInput({...input.img='https://images.wikidexcdn.net/mwuploads/wikidex/0/02/latest/20090125150654/Pok%C3%A9_Ball_%28Ilustraci%C3%B3n%29.png'}) : setInput(input);
         if(Object.keys(errors).length === 0 && input.name.length && input.types.length > 0) {
             dispatch(postPokemon(input));
-            dispatch(getPokemons());
+            // dispatch(getPokemons());
             Swal.fire({
                 title: 'Congrats!',
                 text: 'Your Pokemon has been created',
@@ -185,8 +185,8 @@ export default function CreatePokemon() {
                 {errors.weight && (<p className={s.errors}>{errors.weight}</p>)}
                 </div>
                 <div className={s.createTypes}>
-                    <select className={s.selectValues} onChange={(event)=>handleSelect(event)}>
-                        <option selected disabled value='default'>Select up to two Types</option>
+                    <select className={s.selectValues} value='default' onChange={(event)=>handleSelect(event)}>
+                        <option disabled value='default'>Select up to two Types</option>
                         {
                             input.types.length < 2 ?
                             types.map((type)=>(<option className={s.optionType} value ={type.name} key={type.name}>{type.name.charAt(0).toUpperCase()+type.name.slice(1)}</option>)) :

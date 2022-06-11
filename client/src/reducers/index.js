@@ -24,10 +24,12 @@ function rootReducer (state=initialState, action) {
                 types: action.payload,
             }
         case 'POST_POKEMON':
-            state.filteredPokemons.push(action.payload)
-            state.allPokemons.push(action.payload)
+            let pokemonSession = state.filteredPokemons;
+            pokemonSession.push(action.payload);
             return {
                 ...state,
+                allPokemons: pokemonSession,
+                filteredPokemons: pokemonSession
             }
         case 'ORDER_BY_ID':
             let sortedId = action.payload === 'asc' ?
@@ -109,12 +111,12 @@ function rootReducer (state=initialState, action) {
         case 'GET_POKEMON_BY_NAME':
             const addPokemonByName = state.filteredPokemons;
             if(addPokemonByName.filter((p)=>p.name === action.payload[0].name).length > 0) {
-                console.log('El Pokemon mostrado se encuentra en la App')
+                // console.log('El Pokemon mostrado se encuentra en la App')
             } else {
                 addPokemonByName.push(action.payload[0]);
-                console.log('El Pokemon mostrado se cargó a la App')
+                // console.log('El Pokemon mostrado se cargó a la App')
             }
-            console.log('addPokemonByName--->', action.payload[0].name, 'Pokemons in App--->', addPokemonByName.length)
+            // console.log('addPokemonByName--->', action.payload[0].name, 'Pokemons in App--->', addPokemonByName.length)
             return{
                 ...state,
                 addedPokemons: action.payload,
@@ -122,12 +124,12 @@ function rootReducer (state=initialState, action) {
         case 'GET_POKEMON_BY_ID':
             const addPokemonById = state.filteredPokemons;
             if(addPokemonById.filter((p)=>p.id === action.payload[0].id).length > 0) {
-                console.log('El Pokemon mostrado se encuentra en la App')
+                // console.log('El Pokemon mostrado se encuentra en la App')
             } else {
                 addPokemonById.push(action.payload[0]);
-                console.log('El Pokemon mostrado se cargó a la App')
+                // console.log('El Pokemon mostrado se cargó a la App')
             }
-            console.log('addPokemonById--->', action.payload[0].id, 'Pokemons in App--->', addPokemonById.length, 'LUCASSSS!!!!! PROBA CARGAR EL 774')
+            // console.log('addPokemonById--->', action.payload[0].id, 'Pokemons in App--->', addPokemonById.length, 'LUCASSSS!!!!! PROBA CARGAR EL 774')
             return{
                 ...state,
                 addedPokemons: action.payload,
@@ -167,7 +169,7 @@ function rootReducer (state=initialState, action) {
                 })
                 // alert("You already deleted this pokemon")
             }
-            console.log(action.payload,newFilteredPokemons, state)
+            // console.log(action.payload,newFilteredPokemons, state)
             return{
                 ...state,
                 filteredPokemons: newFilteredPokemons,

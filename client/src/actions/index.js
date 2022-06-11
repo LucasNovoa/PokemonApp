@@ -25,8 +25,16 @@ export function getTypes(){
 
 export function postPokemon(payload){
     return async function(dispatch){
-        const dbPokemon = await axios.post('http://localhost:3001/pokemons', payload);
-        return dbPokemon;
+        try{
+            await axios.post('http://localhost:3001/pokemons', payload);
+            const newPokemon = await axios.get('http://localhost:3001/pokemons?name=' + payload.name);    
+            return dispatch({
+                type: 'POST_POKEMON',
+                payload: newPokemon.data[0]
+            })
+        } catch(error) {
+            console.log(error)
+        }
     }
 }
 
