@@ -98,6 +98,7 @@ export default function CreatePokemon() {
     return(
         <div className={s.createPokemon}>
             <NavBar/>
+            <div className={s.createCard}>
             <h1 className={s.title}>CREATE YOUR POKEMON</h1>
             <form className={s.createForm} onSubmit={(event)=>handleSubmit(event)}>
                 <div className={s.createName}>
@@ -117,7 +118,7 @@ export default function CreatePokemon() {
                     <input
                         type='range'
                         min='1'
-                        max='120'
+                        max='140'
                         value={input.hp}
                         name= 'hp'
                         onChange={handleChange}/>
@@ -221,6 +222,7 @@ export default function CreatePokemon() {
                 </div>
                 <button type='submit' className={s.createBtn}>Create Pokemon</button>
             </form>
+            </div>
         </div>
     )
 }

@@ -27,10 +27,8 @@ export function postPokemon(payload){
     return async function(dispatch){
         try{
             await axios.post('http://localhost:3001/pokemons', payload);
-            const newPokemon = await axios.get('http://localhost:3001/pokemons?name=' + payload.name);    
             return dispatch({
                 type: 'POST_POKEMON',
-                payload: newPokemon.data[0]
             })
         } catch(error) {
             console.log(error)
@@ -38,9 +36,9 @@ export function postPokemon(payload){
     }
 }
 
-export function orderById(payload){
+export function orderByHp(payload){
     return{
-        type: 'ORDER_BY_ID',
+        type: 'ORDER_BY_HP',
         payload
     }
 }

@@ -24,32 +24,28 @@ function rootReducer (state=initialState, action) {
                 types: action.payload,
             }
         case 'POST_POKEMON':
-            let pokemonSession = state.filteredPokemons;
-            // pokemonSession.push(action.payload);
             return {
                 ...state,
-                allPokemons: pokemonSession,
-                filteredPokemons: pokemonSession
             }
-        case 'ORDER_BY_ID':
-            let sortedId = action.payload === 'asc' ?
+        case 'ORDER_BY_HP':
+            let sortedHp = action.payload === 'asc' ?
             state.allPokemons.sort(function (a,b){
-            if (a.id > b.id){
+            if (a.hp > b.hp){
                 return 1;}
-            if (b.id > a.id){
+            if (b.hp > a.hp){
                 return -1;}
                 return 0;
             }) : 
             state.allPokemons.sort(function (a,b){
-            if (a.id > b.id){
+            if (a.hp > b.hp){
                 return -1;}
-            if (b.id > a.id){
+            if (b.hp > a.hp){
                 return 1;}
                 return 0; 
             })
             return{
                 ...state, 
-                allPokemons: sortedId
+                allPokemons: sortedHp
             }
         case 'ORDER_BY_NAME':
             let sortedNames = action.payload === 'asc' ?

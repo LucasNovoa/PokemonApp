@@ -1,7 +1,9 @@
 .details {
   background-image: url("../../img/backgroundImage1.png");
+  background-size: cover;
+  background-position: center;
   height: 100vh;
-}
+  width: 100vw}
 
 .detailCard{
   color: #dddddd;

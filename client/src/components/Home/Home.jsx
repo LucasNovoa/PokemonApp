@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemons, getTypes, removeDetails, orderById, orderByName, orderByStrength, filterByOrigin, filterByType } from "../../actions/index";
+import { getPokemons, getTypes, removeDetails, orderByHp, orderByName, orderByStrength, filterByOrigin, filterByType } from "../../actions/index";
 import { Link } from "react-router-dom";
 import s from "./Home.module.css";
 import loading from '../../img/loading.gif'
@@ -36,10 +36,10 @@ export default function Home() {
         setCurrentPage(1);
     }, [allPokemons.length, setCurrentPage])
 
-    function handleIdSort(e){
+    function handleHpSort(e){
         e.preventDefault();
-        dispatch(orderById(e.target.value));
-        setOrder(`Card number ${e.target.value} order`);
+        dispatch(orderByHp(e.target.value));
+        setOrder(`Hit Points ${e.target.value} order`);
         setCurrentPage(1);
         e.target.value= 'default';
     }
@@ -79,15 +79,15 @@ export default function Home() {
             <NavBar/>
             <SearchBar/>
             <form className={s.filters}>
-                <select className={s.homeFilters} value='default' onChange={e => handleIdSort(e)}>
-                    <option disabled value = "default">order by ID...</option>
-                    <option value = "asc">Asc. order</option>
-                    <option value = "desc">Desc. order</option>
-                </select>
                 <select className={s.homeFilters} value='default' onChange={e => handleSort(e)}>
                     <option disabled value = "default">order by Name...</option>
                     <option value = "asc">A - Z</option>
                     <option value = "desc">Z - A</option>
+                </select>
+                <select className={s.homeFilters} value='default' onChange={e => handleHpSort(e)}>
+                    <option disabled value = "default">order by Hit Points...</option>
+                    <option value = "asc">Asc. order</option>
+                    <option value = "desc">Desc. order</option>
                 </select>
                 <select className={s.homeFilters} value='default' onChange={e => handleSortAttack(e)}>
                     <option disabled value = "default">order by Strength...</option>

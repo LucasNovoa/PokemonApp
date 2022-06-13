@@ -1,7 +1,10 @@
 .createPokemon{
 	background-image: url("../../img/backgroundImage3.png");
+	background-size: cover;
+	background-position: center;
 	height: 100vh;
-  }
+	width: 100vw
+}
 
 .title {
 	font-size: 3rem;
